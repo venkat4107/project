@@ -18,7 +18,13 @@ pipeline {
             steps {	
                 echo 'Sonar Analysis....'
 		sh 'mvn test sonar:sonar -Dsonar.host.url=http://52.0.24.151:9000 -Dsonar.login=3771fcb9872427ce0e7e02da1c229596c3a7ec25'
-            
+        }	
+}	
+        stage('publish package') {	
+            steps {
+                echo 'publish package..'	
+                sh 'mvn package deploy'
+
 	    }	
         }	
     }	
