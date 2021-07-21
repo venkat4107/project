@@ -23,7 +23,7 @@ pipeline {
         stage('publish package') {	
             steps {
                 echo 'publish package..'	
-                sh 'mvn package deploy'
+                sh 'mvn clean deploy'
 
 	    }	
         }	
